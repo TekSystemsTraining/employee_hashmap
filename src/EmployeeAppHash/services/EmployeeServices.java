@@ -11,14 +11,17 @@ public class EmployeeServices implements EmployeeI {
 
 	@Override
 	public boolean addEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result = false;
+		if(employee != null) {
+			this.employees.put(employee.getId(), employee);
+			result = true;
+		}	
+		return result;
 	}
 
 	@Override
 	public Employee removeEmployee(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.employees.remove(id);
 	}
 
 	public HashMap<Integer, Employee> getEmployees() {
